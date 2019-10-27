@@ -1,0 +1,22 @@
+;(function(){
+var obj={
+    star:{
+        lastName: 'Wu',
+        firstName: 'Yanzu'
+    },
+    btnObj: document.getElementsByClassName('buttonNode')[0],
+    lastNameObj: document.getElementsByClassName('lastNameNode')[0],
+    firstNameObj: document.getElementsByClassName('firstNameNode')[0],
+    changeStarProjerties: function(){
+        this.lastNameObj.innerHTML = this.star.lastName;
+        this.firstNameObj.innerHTML = this.star.firstName;        
+    },
+    bindEvents: function(){
+        this.btnObj.addEventListener('click', this.changeStarProjerties.bind(this));
+    },
+    init: function(){
+        this.bindEvents();
+    }
+}
+obj.init();
+})();
